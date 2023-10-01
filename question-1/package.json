@@ -1,0 +1,16 @@
+{
+  "name": "question-1",
+  "version": "1.0.0",
+  "description": "first question of the test",
+  "scripts": {
+    "test": "vitest",
+    "test:watch": "vitest watch"
+  },
+  "author": "Wesley Alves Rolim",
+  "license": "ISC",
+  "devDependencies": {
+    "typescript": "^4.5.4",
+    "vite": "^4.4.9",
+    "vitest": "^0.34.6"
+  }
+}

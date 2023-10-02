@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { GameOverModal, WinModal, Game } from "@/components";
-import { generateRandomMatrixNumbers } from "@/utils";
 import { isTurnedOffAllLights } from "@/validation";
 
 const setTableState = (table: (0 | 1)[][], x: number, y: number) => {
@@ -16,7 +15,13 @@ const setTableState = (table: (0 | 1)[][], x: number, y: number) => {
 export const Home = () => {
   const [gameState, setGameState] = useState({
     turns: 20,
-    table: generateRandomMatrixNumbers(5),
+    table: [
+      [0, 0, 0, 0, 0],
+      [0, 0, 0, 0, 0],
+      [1, 0, 1, 0, 1],
+      [0, 0, 0, 0, 0],
+      [0, 0, 0, 0, 0],
+    ] as (0 | 1)[][],
   });
   const isTurnedOffAllLightsOfTable = isTurnedOffAllLights(gameState.table);
   const isGameOver = !isTurnedOffAllLightsOfTable && gameState.turns === 0;

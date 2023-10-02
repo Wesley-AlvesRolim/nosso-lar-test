@@ -66,7 +66,7 @@ npm install
 npm run dev
 ```
 
-- And enter in your browser using <http://localhost:3000>
+- And enter in your browser using <http://localhost:5173>
 
 ## 🚀 Technologies
 

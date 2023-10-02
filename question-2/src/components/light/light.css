@@ -1,0 +1,21 @@
+.light {
+  background-color: transparent;
+  font-size: 1.5rem;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.light:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 10px #000;
+}
+
+.light.off {
+  background-color: #f00;
+}
+
+.light.on {
+  background-color: #0f0;
+}

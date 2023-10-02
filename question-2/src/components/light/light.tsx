@@ -8,7 +8,7 @@ interface LightProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 export const Light = ({ state, ...props }: LightProps) => {
   return (
     <button className={`light ${state === 0 ? "off" : "on"}`} {...props}>
-      {state}
+      <span>{state === 0 ? "OFF" : "ON"}</span>
     </button>
   );
 };

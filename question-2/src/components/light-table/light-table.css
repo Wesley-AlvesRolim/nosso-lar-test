@@ -1,4 +1,25 @@
 section {
+  width: 90%;
+  max-width: 1024px;
+  margin: 0 auto;
   display: grid;
-  grid-template-columns: repeat(5, 100px);
+  place-items: center;
+}
+
+section > div {
+  display: grid;
+}
+
+@media (orientation: portrait) {
+  section > div {
+    grid-template-columns: repeat(5, calc(100vw / 5));
+    grid-template-rows: repeat(5, calc(100vw / 5));
+  }
+}
+
+@media (orientation: landscape) {
+  section > div {
+    grid-template-columns: repeat(5, 150px);
+    grid-template-rows: repeat(5, 150px);
+  }
 }

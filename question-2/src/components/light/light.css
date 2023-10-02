@@ -1,21 +1,26 @@
 .light {
+  border: solid 1px #ff0;
   background-color: transparent;
   font-size: 1.5rem;
   color: #fff;
-  border: none;
   cursor: pointer;
   transition: all 0.3s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.light > span {
+  display: block;
+  max-height: 100%;
 }
 
 .light:hover {
-  transform: scale(1.1);
-  box-shadow: 0 0 10px #000;
-}
-
-.light.off {
-  background-color: #f00;
+  transform: scale(1.01);
+  box-shadow: 0 0 50px #ff0;
 }
 
 .light.on {
-  background-color: #0f0;
+  color: #000;
+  background-color: #ff0;
 }

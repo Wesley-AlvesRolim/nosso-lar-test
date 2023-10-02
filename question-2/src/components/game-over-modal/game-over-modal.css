@@ -1,0 +1,23 @@
+dialog {
+  width: 100%;
+  height: 100%;
+  border: none;
+  background-color: rgba(0, 0, 0, 0.75);
+  color: #fff;
+  display: grid;
+  place-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+dialog > section > h1 {
+  margin-bottom: 1rem;
+  font-size: 4rem;
+}
+
+dialog > section > a {
+  color: #f10f1f;
+  font-size: 2rem;
+}

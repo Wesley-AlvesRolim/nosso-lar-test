@@ -9,15 +9,17 @@ interface LightTableProps {
 export const LightTable = ({ table, switchState }: LightTableProps) => {
   return (
     <section>
-      {table.map((arr, x) =>
-        arr.map((_, y) => (
-          <Light
-            key={x + "_" + y}
-            state={table[x][y]}
-            onClick={() => switchState(x, y)}
-          />
-        )),
-      )}
+      <div>
+        {table.map((arr, x) =>
+          arr.map((_, y) => (
+            <Light
+              key={x + "_" + y}
+              state={table[x][y]}
+              onClick={() => switchState(x, y)}
+            />
+          )),
+        )}
+      </div>
     </section>
   );
 };

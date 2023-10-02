@@ -23,6 +23,7 @@ export const Home = () => {
     ] as (0 | 1)[][],
   });
   const isTurnedOffAllLightsOfTable = isTurnedOffAllLights(gameState.table);
+  const isGameOver = !isTurnedOffAllLightsOfTable && gameState.turns === 0;
 
   const switchState = (x: number, y: number) => {
     const table = [...gameState.table];
@@ -34,19 +35,15 @@ export const Home = () => {
     setGameState({ ...gameState, table, turns: gameState.turns - 1 });
   };
 
-  if (gameState.turns === 0 && !isTurnedOffAllLightsOfTable) {
-    return <GameOverModal />;
-  }
-
-  if (isTurnedOffAllLightsOfTable) {
-    return <WinModal />;
-  }
-
   return (
-    <Game
-      turns={gameState.turns}
-      table={gameState.table}
-      switchState={switchState}
-    />
+    <>
+      {isGameOver && <GameOverModal />}
+      {isTurnedOffAllLightsOfTable && <WinModal />}
+      <Game
+        turns={gameState.turns}
+        table={gameState.table}
+        switchState={switchState}
+      />
+    </>
   );
 };

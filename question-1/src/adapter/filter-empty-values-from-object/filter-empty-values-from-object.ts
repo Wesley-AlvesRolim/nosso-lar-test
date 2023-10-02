@@ -1,4 +1,5 @@
 import { isEmptyValue, isJsObject } from "@/validation";
+import { filterEmptyValuesFromArray } from "..";
 
 const filterEmptyValues = (value: any) => {
   for (const key in value) {
@@ -10,6 +11,10 @@ const filterEmptyValues = (value: any) => {
 
     if (isJsObject(currentValue)) {
       filterEmptyValues(currentValue);
+    }
+
+    if (Array.isArray(currentValue) && value[key] !== undefined) {
+      value[key] = filterEmptyValuesFromArray(value[key]);
     }
   }
 

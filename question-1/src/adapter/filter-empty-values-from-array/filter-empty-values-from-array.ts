@@ -4,8 +4,14 @@ const filterEmptyValues = <T>(arr: T[]): void => {
       filterEmptyValues(arr[i] as unknown as unknown[]);
     }
 
-    if (arr[i] === null || arr[i] === undefined) {
+    const current = arr[i];
+    if (
+      arr[i] === null ||
+      arr[i] === undefined ||
+      (Array.isArray(current) && current.length === 0)
+    ) {
       arr.splice(i, 1);
+      i--;
     }
   }
 };

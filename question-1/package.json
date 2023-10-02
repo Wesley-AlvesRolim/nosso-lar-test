@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "first question of the test",
   "scripts": {
-    "test": "vitest",
+    "test": "vitest run",
     "test:watch": "vitest watch"
   },
   "author": "Wesley Alves Rolim",
